@@ -46,12 +46,19 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      background: #3b82f6;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+      background: transparent;
+      border: 2px solid var(--highlight);
+      color: var(--highlight);
+      padding: 0.4rem 0.8rem;
+      border-radius: 30px;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: var(--highlight);
+      color: white;
     }
 
     section {
@@ -106,7 +113,7 @@
 </head>
 <body>
   <header>
-    <button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
+    <button class="toggle-btn" onclick="toggleTheme()">☀️ Light Mode</button>
     <h1>Yohanen Dinagde Ejeta</h1>
     <p>Tech Enthusiast | Machine Learning & Data Science | Open to Internships, Jobs, Remote Roles & Scholarship Opportunities</p>
   </header>
@@ -181,8 +188,21 @@
   </footer>
 
   <script>
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'light') {
+      document.body.classList.add('light-mode');
+      toggleBtn.textContent = '🌙 Dark Mode';
+    } else {
+      toggleBtn.textContent = '☀️ Light Mode';
+    }
+
     function toggleTheme() {
-      document.body.classList.toggle("light-mode");
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      toggleBtn.textContent = isLight ? '🌙 Dark Mode' : '☀️ Light Mode';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
     }
   </script>
 </body>
