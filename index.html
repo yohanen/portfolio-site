@@ -21,6 +21,7 @@
       padding: 0;
       background: var(--bg-color);
       color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
     }
 
     header {
@@ -28,6 +29,7 @@
       color: white;
       text-align: center;
       padding: 2rem 1rem;
+      position: relative;
     }
 
     header h1 {
@@ -38,6 +40,18 @@
     header p {
       font-size: 1.2rem;
       margin: 0;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     section {
@@ -80,10 +94,19 @@
     a {
       color: var(--highlight);
     }
+
+    body.light-mode {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --header-bg: #f3f4f6;
+      --section-bg: #f9fafb;
+      --highlight: #1f2937;
+    }
   </style>
 </head>
 <body>
   <header>
+    <button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
     <h1>Yohanen Dinagde Ejeta</h1>
     <p>Tech Enthusiast | Machine Learning & Data Science | Open to Internships, Jobs, Remote Roles & Scholarship Opportunities</p>
   </header>
@@ -147,7 +170,7 @@
     <h2>✉ Contact</h2>
     <p>
       GitHub: <a href="https://github.com/yohanen" target="_blank">github.com/yohanen</a><br />
-      LinkedIn: <a href="https://www.linkedin.com/in/yohanen2021" target="_blank">linkedin.com/in/yohanen2021</a><br />
+      LinkedIn: <a href="https://www.linkedin.com/in/yohanen" target="_blank">linkedin.com/in/yohanen</a><br />
       Email: <a href="mailto:yohanendinagde7@gmail.com">yohanendinagde7@gmail.com</a><br />
       Phone: +91-7409283325
     </p>
@@ -156,5 +179,11 @@
   <footer>
     &copy; 2025 Yohanen Dinagde Ejeta. All rights reserved.
   </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("light-mode");
+    }
+  </script>
 </body>
 </html>
