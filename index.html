@@ -35,11 +35,13 @@
     header h1 {
       font-size: 2.5rem;
       margin: 0.5rem 0;
+      animation: fadeInDown 1s ease-out;
     }
 
     header p {
       font-size: 1.2rem;
       margin: 0;
+      animation: fadeInUp 1s ease-out;
     }
 
     .toggle-btn {
@@ -68,6 +70,7 @@
       background: var(--section-bg);
       border-radius: 10px;
       margin-bottom: 2rem;
+      animation: fadeIn 1s ease-in-out;
     }
 
     h2 {
@@ -89,6 +92,11 @@
       border-radius: 10px;
       margin-bottom: 1rem;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .project img:hover {
+      transform: scale(1.02);
     }
 
     footer {
@@ -113,6 +121,21 @@
       --header-bg: linear-gradient(135deg, #e0eafc, #cfdef3);
       --section-bg: #ffffff;
       --highlight: #e94560;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -179,10 +202,26 @@
   </section>
 
   <section>
+    <h2>📄 Download Resume</h2>
+    <p>
+      You can download my resume here: 
+      <a href="resume.pdf" target="_blank" download>Download Resume (PDF)</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>💬 Testimonials</h2>
+    <p><strong>Professor A. Sharma:</strong> "Yohanen is a highly motivated student who consistently demonstrated excellence in both theory and practical assignments."
+    </p>
+    <p><strong>Team Lead, Final Project:</strong> "He brings creativity and structure into teamwork. His leadership and commitment made a real impact on our success."
+    </p>
+  </section>
+
+  <section>
     <h2>✉ Contact</h2>
     <p>
       GitHub: <a href="https://github.com/yohanen" target="_blank">github.com/yohanen</a><br />
-      LinkedIn: <a href="https://www.linkedin.com/in/yohanen2021" target="_blank">linkedin.com/in/yohanen2021</a><br />
+      LinkedIn: <a href="https://www.linkedin.com/in/yohanen" target="_blank">linkedin.com/in/yohanen</a><br />
       Email: <a href="mailto:yohanendinagde7@gmail.com">yohanendinagde7@gmail.com</a><br />
       Phone: +91-7409283325
     </p>
